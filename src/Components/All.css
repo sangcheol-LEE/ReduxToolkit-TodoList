@@ -1,0 +1,41 @@
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.toDoListContainer {
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.title{
+  width: 100%; 
+}
+.box{
+  display: flex;
+}
+.box :first-child {
+  margin-right: 10px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.form input {
+  width:100%;
+  padding:5px;
+  margin-right:5px;
+}
+.form button {
+  padding :5px 10px;
+}

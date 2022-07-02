@@ -1,8 +1,7 @@
 [
-    { "id": 1, "title": "todo1", "completed": false },
-    { "id": 2, "title": "todo2", "completed": false },
-    { "id": 3, "title": "todo3", "completed": true },
-    { "id": 4, "title": "todo4", "completed": false },
-    { "id": 5, "title": "todo5", "completed": false }
-  
+    { "id": 1, "title": "기상하기", "completed": false },
+    { "id": 2, "title": "이불정리하기", "completed": false },
+    { "id": 3, "title": "양치하기", "completed": true },
+    { "id": 4, "title": "식단하기", "completed": false },
+    { "id": 5, "title": "스스로 단련하기", "completed": false }
 ]

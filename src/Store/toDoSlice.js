@@ -24,7 +24,22 @@ const dataSlice = createSlice({
         completed: false
       };
       state.datas.push(newTodo)
-    }
+    },
+    toggleChecked :(state,action) => {
+      const {datas} = state;
+      const index = datas.findIndex(
+        (todo) => todo.id === action.payload.id
+        );
+        datas[index].completed = action.payload.completed;
+    },
+    activeDelete: (state,action) => {
+      const {datas} = state
+      const result = datas.filter((todo) => todo.id !== action.payload.id);
+      const newTodo = {
+        datas : result
+      }
+      return newTodo
+     }
   },
   extraReducers:{
     [toDoData.pending] : (state) => {
@@ -39,6 +54,6 @@ const dataSlice = createSlice({
   }
 })
 
-export const {addTodo} = dataSlice.actions
+export const {addTodo,toggleChecked,activeDelete} = dataSlice.actions
 
 export default dataSlice.reducer;

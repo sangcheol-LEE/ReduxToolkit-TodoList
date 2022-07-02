@@ -1,30 +1,37 @@
 import React,{useState} from 'react';
 import { useDispatch } from 'react-redux';
 import {addTodo} from '../Store/toDoSlice'
+import './All.css'
 
 const AddTodoForm = () => {
   const dispatch = useDispatch()
 
-  const [value, setValue] = useState();
+  const [text, setText] = useState();
 
   const handelSubmit = (e) => {
     e.preventDefault()
     dispatch(
       addTodo({
-        title:value,
+        title:text,
       })
     );
-    setValue('')
+    setText('')
+  }
+
+  const handleChagne = (e) => {
+    const {value} = e.target
+    setText(value)
+
   }
 
   return (
     <div>
-      <form onSubmit={handelSubmit}>
+      <form onSubmit={handelSubmit} className="form">
         <input 
           type="text"
           placeholder="..add Todo"
-          value={value}
-          onChange={(e) =>setValue(e.target.value)}
+          value={text || ""}
+          onChange={handleChagne}
         />
         <button type="submit">Add</button>
       </form>
