@@ -1,14 +1,13 @@
-import React,{useState} from 'react';
+import React,{useState,useCallback} from 'react';
 import { useDispatch } from 'react-redux';
 import {addTodo} from '../Store/toDoSlice'
 import './All.css'
 
 const AddTodoForm = () => {
   const dispatch = useDispatch()
-
   const [text, setText] = useState();
 
-  const handelSubmit = (e) => {
+  const handelSubmit = useCallback((e) => {
     e.preventDefault()
     dispatch(
       addTodo({
@@ -16,13 +15,12 @@ const AddTodoForm = () => {
       })
     );
     setText('')
-  }
+  },[text])
 
-  const handleChagne = (e) => {
+  const handleChagne = useCallback((e) => {
     const {value} = e.target
     setText(value)
-
-  }
+  },[text])
 
   return (
     <div>

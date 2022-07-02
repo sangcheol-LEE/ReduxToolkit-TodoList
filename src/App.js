@@ -4,6 +4,7 @@ import AddTodoForm from './Components/AddTodoForm';
 import AddToDoList from './Components/AddToDoList';
 import { toDoData } from './Store/toDoSlice'
 import "./Components/All.css"
+import TotalCompletedItem from './Components/TotalCompletedItem';
 
 const App = () => {
   const datas = useSelector((state) => state.datas.datas)
@@ -14,7 +15,7 @@ const App = () => {
   },[])
 
  console.log(datas)
-  
+
 
   return (
       <div id="main">
@@ -25,6 +26,7 @@ const App = () => {
         return <AddToDoList key={idx+1}data={item} idx={idx}/>
       } )  
       }
+      <TotalCompletedItem datas={datas}/>
       </div>
   );
 };
